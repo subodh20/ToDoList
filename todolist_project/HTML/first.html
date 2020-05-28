@@ -13,8 +13,8 @@
       integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
       crossorigin="anonymous"
     />
-    <link href="../CSS/first.css" rel="stylesheet" />
-    <title>Document</title>
+    <link href="../CSS/first.css" rel="stylesheet" type="text/css" />
+    <title>todo list</title>
   </head>
   <body>
     <header><h1>subodh's todo list</h1></header>
@@ -23,16 +23,16 @@
       <button class="todo-button" type="submit">
         <i class="fas fa-plus-square"></i>
       </button>
+      <div class="select">
+        <select name="todos" class="filter-todo">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
     </form>
     <div class="todo-container">
-      <ul class="todo-list">
-        <div class="todo">
-          <li>
-            <button>Delete</button>
-            <button>Checked</button>
-          </li>
-        </div>
-      </ul>
+      <ul class="todo-list"></ul>
     </div>
     <script src="..//JS/first_js.js"></script>
   </body>
