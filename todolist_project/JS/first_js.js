@@ -13,28 +13,34 @@ document.addEventListener("DOMContentLoaded", getTodos);
 function addTodo(event) {
   //prevent form from submitting
   event.preventDefault();
-  //todo div
-  const todoDiv = document.createElement("div");
-  todoDiv.classList.add("todo");
-  //todo li
-  const newTodo = document.createElement("li");
-  newTodo.innerHTML = todoInput.value;
-  newTodo.classList.add("todo-item");
-  todoDiv.appendChild(newTodo);
-  //add todo to local storage
-  saveLocalTodos(todoInput.value);
-  // check mark btn
-  const completedButton = document.createElement("button");
-  completedButton.innerHTML = '<i class="fa fa-check"></i>';
-  completedButton.classList.add("complete-btn");
-  todoDiv.appendChild(completedButton);
-  // check trash btn
-  const trashButton = document.createElement("button");
-  trashButton.innerHTML = '<i class="fa fa-trash"></i>';
-  trashButton.classList.add("trash-btn");
-  todoDiv.appendChild(trashButton);
-  //append to list
-  todoList.appendChild(todoDiv);
+  const todoInputValue = todoInput.value;
+  if (todoInputValue === "") {
+    alert("please enter something to do");
+  } else {
+    //todo div
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+    //todo li
+    const newTodo = document.createElement("li");
+    newTodo.innerHTML = todoInputValue;
+    newTodo.classList.add("todo-item");
+    todoDiv.appendChild(newTodo);
+    //add todo to local storage
+    saveLocalTodos(todoInput.value);
+    // check mark btn
+    const completedButton = document.createElement("button");
+    completedButton.innerHTML = '<i class="fa fa-check"></i>';
+    completedButton.classList.add("complete-btn");
+    todoDiv.appendChild(completedButton);
+    // check trash btn
+    const trashButton = document.createElement("button");
+    trashButton.innerHTML = '<i class="fa fa-trash"></i>';
+    trashButton.classList.add("trash-btn");
+    todoDiv.appendChild(trashButton);
+    //append to list
+    todoList.appendChild(todoDiv);
+  }
+
   //clearing todo input value
   todoInput.value = "";
 }
